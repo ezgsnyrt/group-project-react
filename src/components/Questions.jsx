@@ -1,11 +1,11 @@
 import axios from "axios";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import "../components/showanswer.css";
+import "../styles/questions.css";
 
-const ShowAnswer = () => {
+const Questions = () => {
   // const [currentQuestion, setCurrentQuestion] = useState([]);
   const [lock, setLock] = useState(false);
   const [icon, setIcon] = useState(false);
@@ -130,4 +130,4 @@ const ShowAnswer = () => {
   );
 };
 
-export default ShowAnswer;
+export default Questions;
