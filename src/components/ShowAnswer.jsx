@@ -6,38 +6,38 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import "../styles/showanswer.css";
 //import TriviaButton from "./TriviaButton";
 
-const TriviaData = () => {
-  const [currentQuestion, setCurrentQuestion] = useState([]);
-  const [lock, setLock] = useState(false);
-  const [icon, setIcon] = useState(false);
-  //const [correctAnswer, setCorrectAnswer] = useState("");
+// const TriviaData = () => {
+//   const [currentQuestion, setCurrentQuestion] = useState([]);
+//   const [lock, setLock] = useState(false);
+//   const [icon, setIcon] = useState(false);
+//const [correctAnswer, setCorrectAnswer] = useState("");
 
-  //Showing which option is answer. But it is not working. Need to figure out the issue
-  // let option1 = useRef(null);
-  // let option2 = useRef(null);
-  // let option3 = useRef(null);
-  // let option4 = useRef(null);
-  // let options_array = [option1, option2, option3, option4];
-  // console.log(option1, option2, option3, option4);
-  // .get method of axios to get data from the link of API:
-  useEffect(() => {
-    axios
-      .get(
-        "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple"
-      )
-      // .then method to set the data in to state with setCurrentQuestion
-      .then((response) => response.data)
-      .then((data) => setCurrentQuestion([data.results[0]]));
-  }, []);
+//Showing which option is answer. But it is not working. Need to figure out the issue
+// let option1 = useRef(null);
+// let option2 = useRef(null);
+// let option3 = useRef(null);
+// let option4 = useRef(null);
+// let options_array = [option1, option2, option3, option4];
+// console.log(option1, option2, option3, option4);
+// .get method of axios to get data from the link of API:
+// useEffect(() => {
+//   axios
+//     .get(
+//       "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple"
+//     )
+//     // .then method to set the data in to state with setCurrentQuestion
+//     .then((response) => response.data)
+//     .then((data) => setCurrentQuestion([data.results[0]]));
+// }, []);
 
-  // function nextQuestion() {
-  //   if (currentQuestion < 9) {
-  //     setCurrentQuestion(currentQuestion + 1);
-  //   } else if (currentQuestion === 9) {
-  //     setIsFinished(1);
-  //   }
-  // }
-
+// function nextQuestion() {
+//   if (currentQuestion < 9) {
+//     setCurrentQuestion(currentQuestion + 1);
+//   } else if (currentQuestion === 9) {
+//     setIsFinished(1);
+//   }
+// }
+const ShowAnswer = () => {
   //Showing correct or incorrect
   const checkAnswer = (e, ans) => {
     const correctAnswer = currentQuestion[0].correct_answer === ans;
@@ -117,4 +117,4 @@ const TriviaData = () => {
   );
 };
 
-export default TriviaData;
+export default ShowAnswer;

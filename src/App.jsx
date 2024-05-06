@@ -1,10 +1,9 @@
-
-import './App.css';
-import { useEffect, useState } from 'react';
-import Intro from './components/Intro';
-//import StartPage from './components/StartPage';
-import Modal from "./components/Modal.jsx"
-
+import "./App.css";
+import { useEffect, useState } from "react";
+import Intro from "./components/Intro";
+import StartPage from "./components/StartPage.jsx";
+import Modal from "./components/Modal.jsx";
+import Questions from "./components/components/Questions.jsx";
 
 // Component Functional
 function App() {
@@ -12,17 +11,13 @@ function App() {
   const [username, setUsername] = useState("");
 
   useEffect(() => {
-    console.log(username)
-  }, [])
+    console.log(username);
+  }, []);
   // dynamic html content
   return (
     <div className="App">
-      {
-        username.length == 0 ? <Intro setName={setUsername} /> : ""
-      }
-      {
-        username.length > 0 ? <StartPage /> : ""
-      }
+      {username.length == 0 ? <Intro setName={setUsername} /> : ""}
+      {username.length > 0 ? <StartPage /> : ""}
       <Modal />
     </div>
   );
